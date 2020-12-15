@@ -6,25 +6,49 @@
 // Categoria selezionata dall'utente
 // Aggiungiamo una piccola animazione al click su "Crea" e "Annulla", se clicchiamo su annulla dobbiamo ripulire il form.
 
-var nome, km, eta, prezzo;
+// Nome delle variabili
+var nome, km, eta, carrozza, prezzo;
 
+eta = document.getElementById('eta').value = '';
+
+// Click su button "genera"
 document.getElementById("genera").addEventListener('click',
 function() {
-// codice
-nome = document.getElementById('nome').value;
-km = document.getElementById('km').value;
-eta = document.getElementById('eta').value;
-prezzo = km * 0.21;
-if (eta < 18) {
-  prezzo = (km * 0.21) / 100 * 80;
-} else if (eta >= 65 ) {
-    prezzo = (km * 0.21) / 100 * 60;
-}
-//
+  // codice
+  // definizione variabili
+  nome = document.getElementById('nome').value;
+  km = document.getElementById('km').value;
+  eta = document.getElementById('eta').value;
+  prezzo = km * 0.21;
+  if (eta == 'Sconto Minorenne') {
+    prezzo = (km * 0.21) / 100 * 80;
+  } else if (eta == 'Sconto Over 65' ) {
+      prezzo = (km * 0.21) / 100 * 60;
+  }
+
+  // valori a schermo
+  document.getElementById('biglietto').className = 'show';
+
+  document.getElementById('nome-input').innerHTML = nome;
+  document.getElementById('offerta').innerHTML = eta;
+  document.getElementById('carrozza').innerHTML = Math.floor(Math.random()*10) + 1;
+  document.getElementById('codice').innerHTML = Math.floor(Math.random()*10000) + 90000;
+  document.getElementById('prezzo').innerHTML = prezzo.toFixed(2) + ' €';
+  //
 }
 );
 
+// Click su button "annulla"
+document.getElementById("annulla").addEventListener('click',
+function() {
+  // codice
+  // definizione variabili
+  nome = document.getElementById('nome').value = '';
+  km = document.getElementById('km').value = '';
+  eta = document.getElementById('eta').value = '';
 
-// document.getElementById('km').innerHTML += km;
-// document.getElementById('eta').innerHTML += eta;
-// document.getElementById('generated-price').innerHTML = prezzo.toFixed(2) + ' €';
+  // valori a schermo
+  document.getElementById('biglietto').className = 'hidden';
+  //
+}
+);

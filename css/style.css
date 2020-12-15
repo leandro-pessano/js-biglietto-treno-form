@@ -18,6 +18,11 @@ h1, h2 {
   text-transform: uppercase;
 }
 
+h3 {
+  font-family: 'Roboto', sans-serif;
+  text-transform: uppercase;
+}
+
 label {
   margin-bottom: 10px;
   color: #113F5E;
@@ -42,6 +47,7 @@ input {
 }
 
 button {
+  margin-top: 40px;
   padding: 5px;
   color: #113F5E;
   font-weight: bold;
@@ -56,27 +62,81 @@ button:active {
   color: white;
 }
 
-.container {
+.show {
+  opacity: 1;
+  transition: 0.2s;
+}
+
+.hidden {
+  opacity: 0;
+  transition: 0.2s;
+}
+
+
+/* Calcolatore */
+.calcolatore {
+  margin: 20px auto;
+  padding: 20px;
+  min-width: 600px;
+  width: 60%;
+  background-color: white;
+  border-radius: 10px;
+  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+.calcolatore .row {
+  display: flex;
+  justify-content: center;
+}
+
+.calcolatore .row .col {
+  padding: 0 30px;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Biglietto generato */
+#biglietto {
   margin: auto;
+  padding: 20px;
   min-width: 600px;
   width: 60%;
   background-color: white;
 }
 
-.row {
+#biglietto .row {
   display: flex;
-  justify-content: center;
 }
 
-.row .col {
-  padding: 20px 30px;
-  display: flex;
-  flex-direction: column;
+#biglietto .row:last-child {
+  border-top: 1px solid grey;
+  border-bottom: 1px solid grey;
 }
 
-/* Calcolatore */
-.container.calcolatore {
-  margin: 20px auto;
-  border-radius: 10px;
-  box-shadow: 4px 4px 8px rgba(0, 0, 0, 0.5);
+#biglietto .col.left {
+  padding: 20px;
+  width: 20%;
+  text-align: left;
+  background-color: grey;
+}
+
+#biglietto .col.left #nome-input {
+  line-height: 1.6;
+  text-transform: capitalize;
+  font-weight: bold;
+  font-size: 120%;
+}
+
+#biglietto .col.right {
+  padding: 30px 0;
+  width: 80%;
+}
+
+#biglietto table {
+  width: 100%;
+}
+
+#biglietto table th {
+  width: calc(100% / 4);
+  padding-bottom: 40px;
 }
