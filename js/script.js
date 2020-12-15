@@ -8,16 +8,23 @@
 
 var nome, km, eta, prezzo;
 
+document.getElementById("genera").addEventListener('click',
+function() {
+// codice
 nome = document.getElementById('nome').value;
 km = document.getElementById('km').value;
 eta = document.getElementById('eta').value;
-console.log(eta);
+console.log(nome, km, eta);
 prezzo = km * 0.21;
 if (eta < 18) {
   prezzo = (km * 0.21) / 100 * 80;
 } else if (eta >= 65 ) {
     prezzo = (km * 0.21) / 100 * 60;
 }
+//
+}
+);
+
 
 // document.getElementById('km').innerHTML += km;
 // document.getElementById('eta').innerHTML += eta;
