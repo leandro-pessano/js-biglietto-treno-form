@@ -14,7 +14,6 @@ function() {
 nome = document.getElementById('nome').value;
 km = document.getElementById('km').value;
 eta = document.getElementById('eta').value;
-console.log(nome, km, eta);
 prezzo = km * 0.21;
 if (eta < 18) {
   prezzo = (km * 0.21) / 100 * 80;

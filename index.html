@@ -5,27 +5,54 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Biglietto Treno</title>
-
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-  <h1>Calcola il prezzo del tuo biglietto</h1>
+  <!-- Calcolatore -->
+  <h2>Calcola il prezzo del tuo biglietto</h2>
+  <div class="container calcolatore">
+    <div class="row">
+
+      <div class="col">
+        <label for="nome">Nome e Cognome</label>
+        <input id="nome" type="text" placeholder="Inserisci nome e cognome">
+      </div>
+
+      <div class="col">
+        <label for="km">Km da percorrere</label>
+        <input id="km" type="number" placeholder="Numero Km">
+      </div>
+
+      <div class="col">
+        <label for="eta">Fascia d'et&agrave;</label>
+        <select id="eta">
+          <option value="minorenne">Minorenne</option>
+          <option value="maggiorenne">Maggiorenne</option>
+          <option value="over">Over 65</option>
+        </select>
+      </div>
+
+    </div>
+
+
+    <div class="row">
+      <div class="col">
+        <button id="genera" type="button" name="button">Genera</button>
+      </div>
+      <div class="col">
+        <button type="button" name="button">Annulla</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Biglietto generato -->
+  <h2>Il tuo biglietto</h2>
   <div class="container">
-    <label for="nome">Nome Cognome</label>
-    <input id="nome" type="text" placeholder="Inserisci nome e cognome">
 
-    <label for="km">Km da percorrere</label>
-    <input id="km" type="number" placeholder="Numero Km">
-
-    <label for="eta"></label>
-    <select id="eta">
-      <option value="minorenne">Minorenne</option>
-      <option value="maggiorenne">Maggiorenne</option>
-      <option value="over">Over 65</option>
-    </select>
-
-    <button id="genera" type="button" name="button">Genera</button>
-    <button type="button" name="button">Annulla</button>
   </div>
 
   <script src="js/script.js" charset="utf-8"></script>
