@@ -49,6 +49,12 @@ function() {
 
   // valori a schermo
   document.getElementById('biglietto').className = 'hidden';
+
+  document.getElementById('nome-input').innerHTML = '';
+  document.getElementById('offerta').innerHTML = '';
+  document.getElementById('carrozza').innerHTML = '';
+  document.getElementById('codice').innerHTML = '';
+  document.getElementById('prezzo').innerHTML = '';
   //
 }
 );
